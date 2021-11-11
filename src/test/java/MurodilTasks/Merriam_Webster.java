@@ -23,14 +23,15 @@ public class Merriam_Webster {
         driver.manage().window().maximize();
         String url = " https://www.merriam-webster.com/ ";
         driver.get(url);
-        List<WebElement> links = driver.findElements(By.tagName("script"));
+        List<WebElement> links = driver.findElements(By.tagName("a"));
 
         System.out.println("There are : "+ links.size()+ " in the Website");
 
+
         int countLinks =0;
         for(WebElement eachLink: links){
-            System.out.println("Links: "+ eachLink.getAttribute("src"));
-            if(eachLink.getAttribute("src").isEmpty()){
+            System.out.println("Links: "+ eachLink.getText());
+            if(eachLink.getText().isEmpty()){
                 countLinks++;
 
             }

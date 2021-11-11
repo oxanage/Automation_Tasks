@@ -29,11 +29,13 @@ public class Merriam_Webster {
 
         int countLinks =0;
         for(WebElement eachLink: links){
+            System.out.println("Links: "+ eachLink.getAttribute("src"));
             if(eachLink.getAttribute("src").isEmpty()){
                 countLinks++;
 
             }
         }
         System.out.println("Missing text links: "+ countLinks);
+        driver.quit();
     }
 }
